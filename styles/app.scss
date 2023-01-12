@@ -1,0 +1,31 @@
+body {
+     direction: rtl;
+     font-family: iransansx;
+}
+button {
+     font-family: inherit;
+     cursor: pointer;
+}
+a {
+     text-decoration: none;
+     color: inherit;
+}
+ul{
+     list-style: none;
+}
+* {
+     margin: 0;
+     padding: 0;
+}
+.cont {
+     width: 96%;
+     margin: 1.5em auto;
+}
+.continer{
+
+
+     padding: 50px;
+}
+
+@import '../components/structural/Fonts';
+@import 'new';

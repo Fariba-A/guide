@@ -1,0 +1,79 @@
+$orientation: screen;
+$mobile: 480px;
+$tablet: 698px;
+$laptop: 992px;
+$screen: 1200px;
+@function orientation() {
+    @if ($orientation == 'screen') {
+        @return 'max-width';
+    }
+
+    @if ($orientation == 'mobile') {
+        @return 'min-width'
+    }
+}
+
+@mixin media($arg) {
+    @media (orientation(): $arg) {
+        @content
+    }
+}
+
+@function letterSpace($unit) {
+    $result: $unit / 25;
+    @return $result;
+}
+
+@mixin flex($just, $align, $dir: row) {
+    display: flex;
+
+    @if $just == c {
+        $just: center;
+    }
+
+    @if $just == s {
+        $just: flex-start;
+    }
+
+    @if $just == e {
+        $just: flex-end;
+    }
+
+    @if $just == sa {
+        $just: space-around;
+    }
+
+    @if $just == sb {
+        $just: space-between;
+    }
+
+    @if $just == se {
+        $just: space-evenly;
+    }
+
+    @if $align == c {
+        $align: center;
+    }
+
+    @if $align == s {
+        $align: flex-start;
+    }
+
+    @if $align == e {
+        $align: flex-end;
+    }
+
+    justify-content: $just;
+    align-items: $align;
+    flex-direction: $dir;
+}
+
+@mixin box($item) {
+    width: $item;
+    height: $item;
+}
+
+@mixin scalePics($width, $height, $scale) {
+    width: $width / $scale;
+    height: $height / $scale;
+}
