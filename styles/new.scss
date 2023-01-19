@@ -12,7 +12,7 @@ align-items: center;
         box-shadow: 2px 5px 9px 1px #0000001c;
         display: grid;
         grid-template-rows:17em 17em 3em;
-        grid-template-columns: repeat(3, minmax(7em,10em));
+        grid-template-columns: repeat(3, minmax(5em,10em));
 padding: 1.5em;
 gap: 1.5em 0;
 
@@ -27,10 +27,14 @@ line-height: 2em;
     font-size: 0.9em;
 grid-column: 1/4;
 
+
   span{
     font-size: 0.85em;
     color: #636567;
     margin-right: 5px;
+    
+    text-align: justify;
+
   }
 
 }
@@ -92,6 +96,19 @@ li{
         }
    
     }
+
+   }
+   @include media($mobile){
+.explanPanel{
+    font-size: 0.9em;
+  }
+  li{
+    grid-template-rows: 12em 14em 3em;
+    &:first-child{
+        grid-template-rows:28em 17em  3em;
+    }
+
+}
 
    }
 }
